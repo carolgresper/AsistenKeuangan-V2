@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asisten Keuangan Carol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Asisten Keuangan Carol</h1>
+
+        <!-- Input untuk Pemasukan -->
+        <div class="input-section">
+            <h2>Pemasukan</h2>
+            <input type="number" id="jumlahPemasukan" placeholder="Jumlah (Rp)">
+            <input type="text" id="deskripsiPemasukan" placeholder="Deskripsi">
+            <input type="date" id="tanggalPemasukan">
+            <input type="time" id="waktuPemasukan">
+            <button onclick="tambahPemasukan()">Tambah Pemasukan</button>
+        </div>
+
+        <!-- Input untuk Pengeluaran -->
+        <div class="input-section">
+            <h2>Pengeluaran</h2>
+            <input type="number" id="jumlahPengeluaran" placeholder="Jumlah (Rp)">
+            <input type="text" id="deskripsiPengeluaran" placeholder="Deskripsi">
+            <input type="date" id="tanggalPengeluaran">
+            <input type="time" id="waktuPengeluaran">
+            <button onclick="tambahPengeluaran()">Tambah Pengeluaran</button>
+        </div>
+
+        <!-- Tabel Laporan Keuangan -->
+        <h2>Laporan Keuangan</h2>
+        <table id="laporanKeuangan">
+            <thead>
+                <tr>
+                    <th>Deskripsi</th>
+                    <th>Jumlah (Rp)</th>
+                    <th>Tanggal</th>
+                    <th>Waktu</th>
+                    <th>Saldo Terakhir</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="laporanBody"></tbody>
+        </table>
+        
+        <h3>Saldo: <span id="saldo">Rp0</span></h3>
+        <button onclick="downloadCSV()">Download CSV</button>
+        <button onclick="resetData()">Reset Data</button>
+
+        <!-- Tempatkan canvas untuk Chart.js -->
+        <h2>Analisis Keuangan Bulanan</h2>
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Pastikan urutan pemanggilan script benar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/5.0.0/docx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
